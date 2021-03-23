@@ -11,14 +11,14 @@
 </head>
 
 <body>
-    <h1>Come back soon for a coding quiz!</h1>
-
-    <div class="section quiz-start-card">
+    <h1>View Highscore</h1>
+    <h2>Time: <span>60</span></h2>
+    <div id="quiz-start-card" class="section">
         <h1>Coding Quiz Challenge</h1>
         <p>These are the directions of the quiz. Please pick one of the answers by clicking on the appropriate
             answer. Answer as many questions as you can before the timer in the top right runs out!
-
         </p>
+        <button class="btn start-btn">Start Quiz!</button>
     </div>
 
 
@@ -26,7 +26,25 @@
 
 
 
-    <div class="section question-card hidden">
+    <div id="q1" class="section question-card hidden">
+        <h2>Commonly used data types do not include: </h2>
+        <ol class="q1-ol">
+            <button data-correct="correct">1. Javascript</button>
+            <button data-correct="incorrect">2. Booleans</button>
+            <button data-correct="incorrect">3. Strings</button>
+            <button data-correct="incorrect">4. Number</button>
+        </ol>
+    </div>
+    <div id="q2" class="section question-card hidden">
+        <h2>Commonly used data types do not include: </h2>
+        <ol>
+            <button>1. Javascript</button>
+            <button>2. Booleans</button>
+            <button>3. Strings</button>
+            <button>4. Number</button>
+        </ol>
+    </div>
+    <div id="q3" class="section question-card hidden">
         <h2>Commonly used data types do not include: </h2>
         <ol>
             <button>1. Javascript</button>

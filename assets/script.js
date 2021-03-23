@@ -3,6 +3,36 @@
 // I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 // SO THAT I can gauge my progress compared to my peers
 
+var questionCard = document.querySelectorAll(".question-card")
+var startBtn = document.querySelector(".start-btn")
+var quizStartCard = document.getElementById("quiz-start-card")
+var q1 = document.getElementById("q1")
+
+startBtn.addEventListener('click', function () {
+    // If button it clicked hide .quiz-start-card by adding "hidden" class
+    quizStartCard.classList.add('hidden')
+    // take off hidden class from q1
+    q1.classList.remove('hidden')
+})
+
+//function for correct or incorrect answer using data attributes
+
+document.querySelectorAll('.q1-ol > [data-correct]').forEach(el => {
+    el.addEventListener('click', function () {
+        if (this.dataset.correct === "correct") {
+            alert('correct')
+        } else {
+            //if question is wrong deduct time from timer
+            alert('incorrect')
+        }
+    })
+});
+
+// view highscore - using local storage
+
+// timer settimeout every second re-display number
+// last thing to work on 
+
 // Acceptance Criteria
 // GIVEN I am taking a code quiz
 // WHEN I click the start button
