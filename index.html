@@ -11,51 +11,92 @@
 </head>
 
 <body>
-    <h1>View Highscore</h1>
-    <h2>Time: <span>60</span></h2>
-    <div id="quiz-start-card" class="section">
+    <header>
+        <h1 class="highscore"><a href="#highscore" id="takeToHighScore">View Highscore</a></h1>
+        <h2 class="timer">Time: <span id="time">01:00</span></h2>
+    </header>
+    <section id="quiz-start-card" class="container">
         <h1>Coding Quiz Challenge</h1>
         <p>These are the directions of the quiz. Please pick one of the answers by clicking on the appropriate
             answer. Answer as many questions as you can before the timer in the top right runs out!
         </p>
         <button class="btn start-btn">Start Quiz!</button>
-    </div>
-
-
-
-
-
-
-    <div id="q1" class="section question-card hidden">
-        <h2>Commonly used data types do not include: </h2>
-        <ol class="q1-ol">
-            <button data-correct="correct">1. Javascript</button>
-            <button data-correct="incorrect">2. Booleans</button>
-            <button data-correct="incorrect">3. Strings</button>
-            <button data-correct="incorrect">4. Number</button>
-        </ol>
-    </div>
-    <div id="q2" class="section question-card hidden">
-        <h2>Commonly used data types do not include: </h2>
+    </section>
+    <!-- look up slideshow and use this for each question  -->
+    <section class="question-section">
+        <div id="q1" class="container question-card hidden">
+            <h2>Commonly used data types do not include: </h2>
+            <ol class="q1-ol">
+                <button data-correct="correct">1. Javascript</button>
+                <button data-correct="incorrect">2. Booleans</button>
+                <button data-correct="incorrect">3. Strings</button>
+                <button data-correct="incorrect">4. Number</button>
+            </ol>
+        </div>
+        <div id="q2" class="container question-card hidden">
+            <h2>Which of these is used to create a variable in Javascript: </h2>
+            <ol class="q2-ol">
+                <button data-correct="incorrect">1. give </button>
+                <button data-correct="incorrect" class="wrong">2. let</button>
+                <button data-correct="correct" class="wrong">3. start</button>
+                <button data-correct="incorrect" class="wrong">4. announce</button>
+            </ol>
+        </div>
+        <div id="q3" class="container question-card hidden">
+            <h2>Which of these is a popular CSS API used? </h2>
+            <ol class="q3-ol">
+                <button data-correct="correct">1. Jumbo</button>
+                <button data-correct="incorrect">2. Dart</button>
+                <button data-correct="incorrect">3. Bootstrap</button>
+                <button data-correct="incorrect">4. Shoelace</button>
+            </ol>
+        </div>
+        <div id="q4" class="container question-card hidden">
+            <h2>Commonly used data types do not include: </h2>
+            <ol class="q4-ol">
+                <button data-correct="correct">1. Javascript</button>
+                <button data-correct="incorrect">2. Booleans</button>
+                <button data-correct="incorrect">3. Strings</button>
+                <button data-correct="incorrect">4. Number</button>
+            </ol>
+        </div>
+        <div id="q5" class="container question-card hidden">
+            <h2>What kind of box is used for format in CSS? </h2>
+            <ol class="q5-ol">
+                <button data-correct="correct">1. flexbox</button>
+                <button data-correct="incorrect">2. CSSbox</button>
+                <button data-correct="incorrect">3. Boxflex</button>
+                <button data-correct="incorrect">4. GridMap</button>
+            </ol>
+        </div>
+        <div id="q6" class="container question-card hidden">
+            <h2>What is the command to copy a repo with git? </h2>
+            <ol class="q6-ol">
+                <button data-correct="incorrect">1. git gitit </button>
+                <button data-correct="correct">2. git clone </button>
+                <button data-correct="incorrect">3. git push </button>
+                <button data-correct="incorrect">4. git </button>
+            </ol>
+        </div>
+        <div id="highscore" class="container question-card hidden">
+            <h2>HIGHSCORES </h2>
+            <ol>
+                <li>1. Tyler</li>
+                <li>2. Trevan</li>
+                <li>3. Andrew</li>
+            </ol>
+            <label for="name"></label>
+            <input type="text" name="name">
+        </div>
+    </section>
+    <!-- <section class="highscore container hidden" id="highscore">
+        <h1>HIGHSCORES</h1>
         <ol>
-            <button>1. Javascript</button>
-            <button>2. Booleans</button>
-            <button>3. Strings</button>
-            <button>4. Number</button>
+            <li>Tyler</li>
+            <li>Trevan</li>
+            <li>Andrew</li>
         </ol>
-    </div>
-    <div id="q3" class="section question-card hidden">
-        <h2>Commonly used data types do not include: </h2>
-        <ol>
-            <button>1. Javascript</button>
-            <button>2. Booleans</button>
-            <button>3. Strings</button>
-            <button>4. Number</button>
-        </ol>
-    </div>
-    <div class="feedback">
-
-    </div>
+    </section> -->
 
 
 

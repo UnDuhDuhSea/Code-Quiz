@@ -1,32 +1,165 @@
-// User Story
-// AS A coding boot camp student
-// I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-// SO THAT I can gauge my progress compared to my peers
-
 var questionCard = document.querySelectorAll(".question-card")
 var startBtn = document.querySelector(".start-btn")
 var quizStartCard = document.getElementById("quiz-start-card")
 var q1 = document.getElementById("q1")
+var q2 = document.getElementById("q2")
+var q3 = document.getElementById("q3")
+var q4 = document.getElementById("q4")
+var q5 = document.getElementById("q5")
+var q6 = document.getElementById("q6")
+var highScore = document.getElementById("highscore")
+var highScorePage = document.getElementById("takeToHighScore")
+// this establishes gloabl scope for timer so i can subtract from this
+// var timer;
+
+var questions = [quizStartCard, q1, q2, q3, q4, q5, q6]
+var score = ""
 
 startBtn.addEventListener('click', function () {
-    // If button it clicked hide .quiz-start-card by adding "hidden" class
+    // If button is clicked hide .quiz-start-card by adding "hidden" class
     quizStartCard.classList.add('hidden')
+    oneMinuteTimer()
     // take off hidden class from q1
     q1.classList.remove('hidden')
 })
 
+
+highScorePage.addEventListener('click', function () {
+    for (let i = 0; i < questions.length; i++) {
+        this.classList.add('hidden')
+    }
+    highscore.classList.remove('hidden')
+
+})
 //function for correct or incorrect answer using data attributes
 
 document.querySelectorAll('.q1-ol > [data-correct]').forEach(el => {
     el.addEventListener('click', function () {
         if (this.dataset.correct === "correct") {
-            alert('correct')
+            q1.classList.add('hidden')
+            q2.classList.remove('hidden')
+            // store this answer in local storage
         } else {
-            //if question is wrong deduct time from timer
-            alert('incorrect')
+            q1.classList.add('hidden')
+            q2.classList.remove('hidden')
+            // seconds get taken away 
+            // check if timer is less than 0. Do not show next
+            // store this answer in local storage
         }
     })
 });
+
+document.querySelectorAll('.q2-ol > [data-correct]').forEach(el => {
+    el.addEventListener('click', function () {
+        if (this.dataset.correct === "correct") {
+            q2.classList.add('hidden')
+            q3.classList.remove('hidden')
+            // store this answer in local storage
+        } else {
+            q2.classList.add('hidden')
+            q3.classList.remove('hidden')
+            // seconds get taken away 
+            // check if timer is less than 0. Do not show next
+            // store this answer in local storage
+        }
+    })
+});
+
+document.querySelectorAll('.q3-ol > [data-correct]').forEach(el => {
+    el.addEventListener('click', function () {
+        if (this.dataset.correct === "correct") {
+            q3.classList.add('hidden')
+            q4.classList.remove('hidden')
+            // store this answer in local storage
+        } else {
+            q3.classList.add('hidden')
+            q4.classList.remove('hidden')
+            // seconds get taken away 
+            // check if timer is less than 0. Do not show next
+            // store this answer in local storage
+        }
+    })
+});
+
+document.querySelectorAll('.q4-ol > [data-correct]').forEach(el => {
+    el.addEventListener('click', function () {
+        if (this.dataset.correct === "correct") {
+            q4.classList.add('hidden')
+            q5.classList.remove('hidden')
+            // store this answer in local storage
+        } else {
+            q4.classList.add('hidden')
+            q5.classList.remove('hidden')
+            // seconds get taken away 
+            // check if timer is less than 0. Do not show next
+            // store this answer in local storage
+        }
+    })
+});
+
+document.querySelectorAll('.q5-ol > [data-correct]').forEach(el => {
+    el.addEventListener('click', function () {
+        if (this.dataset.correct === "correct") {
+            q5.classList.add('hidden')
+            q6.classList.remove('hidden')
+            // store this answer in local storage
+        } else {
+            q5.classList.add('hidden')
+            q6.classList.remove('hidden')
+            // seconds get taken away 
+            // check if timer is less than 0. Do not show next
+            // store this answer in local storage
+        }
+    })
+});
+
+document.querySelectorAll('.q6-ol > [data-correct]').forEach(el => {
+    el.addEventListener('click', function () {
+        if (this.dataset.correct === "correct") {
+            q6.classList.add('hidden')
+            highscore.classList.remove('hidden')
+            // store this answer in local storage
+        } else {
+            q6.classList.add('hidden')
+            highscore.classList.remove('hidden')
+            alert("quiz OVER!")
+            // seconds get taken away 
+            // check if timer is less than 0. Do not show next
+            // store this answer in local storage
+        }
+    })
+});
+
+
+
+// create a function for highScore 
+
+
+
+
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+        // timer needs to be in global scope for this to work
+        if (--timer < 0) {
+            timer = duration;
+        }
+
+    }, 1000);
+}
+
+var oneMinuteTimer = function () {
+    var minuteTimer = 60,
+        display = document.querySelector('#time');
+    startTimer(minuteTimer, display);
+};
 
 // view highscore - using local storage
 
